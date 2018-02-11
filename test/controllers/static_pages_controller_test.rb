@@ -10,6 +10,7 @@ class StaticPagesControllerTest < ActionDispatch::IntegrationTest
     get root_path
     assert_select 'h1', text: 'This is the home page'
     assert_select'p', text: 'Welcome to instaRails!'
+    assert_select 'title', text: 'Home | instaRails'
   end
 
   test "should get about" do
