@@ -8,9 +8,9 @@ class PostsController < ApplicationController
   def create
     @post = Post.new(user_params)
     if @post.save
-      p 'Yay, you made a post!'
+      redirect_to posts_path
     else
-      redirect root_path
+      redirect_to root_path
     end
   end
 
