@@ -1,6 +1,8 @@
 @import "bootstrap";
 @import url('https://fonts.googleapis.com/css?family=Pacifico');
 
+$section-border: rgba(202, 203, 202, 0.74);
+
 section {
   overflow: auto;
 }
@@ -13,17 +15,45 @@ section {
 
 .navbar {
   background-color: white !important;
+  border-top: 1px solid $section-border;
+  border-bottom: 1px solid $section-border;
   .navbar-brand {
     font-family: 'Pacifico', cursive;
     font-size: 2em;
+    letter-spacing: 2px;
   }
 }
+
+ // Footer //
+
+footer {
+  margin-top: 45px;
+  padding-top: 5px;
+  border-top: 1px solid $section-border;
+
+  a {
+      color: gray;
+      &:hover {
+        color: gray;
+      }
+    }
+    small {
+      float: left;
+    }
+    ul {
+      float: right;
+      list-style: none;
+      li {
+        float: left;
+        margin-left: 15px;
+      }
+    }
+  }
 
 //Static_pages - Home
 .jumbotron {
   margin-top: 20px;
-
-  .btn {
-    margin-top: 50px;
+  p {
+    margin-top: 20px;
   }
 }
