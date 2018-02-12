@@ -8,14 +8,16 @@ class StaticPagesControllerTest < ActionDispatch::IntegrationTest
 
   test "root should be home" do
     get root_path
-    assert_select 'h1', text: 'This is the home page'
-    assert_select'p', text: 'Welcome to instaRails!'
+    assert_select'h1', text: 'Welcome to instaRails'
+    assert_select 'p', text: 'Sign up to start sharing your photos!'
+    assert_select 'a[href=?]', '#'
     assert_select 'title', text: 'Home | instaRails'
   end
 
   test "should get about" do
     get static_pages_about_url
     assert_response :success
+    assert_select "title", text: 'About | instaRails'
   end
 
 end

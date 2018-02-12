@@ -1,0 +1,29 @@
+@import "bootstrap";
+@import url('https://fonts.googleapis.com/css?family=Pacifico');
+
+section {
+  overflow: auto;
+}
+
+.center {
+  text-align: center
+}
+
+// Navbar //
+
+.navbar {
+  background-color: white !important;
+  .navbar-brand {
+    font-family: 'Pacifico', cursive;
+    font-size: 2em;
+  }
+}
+
+//Static_pages - Home
+.jumbotron {
+  margin-top: 20px;
+
+  .btn {
+    margin-top: 50px;
+  }
+}
