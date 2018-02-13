@@ -1,6 +1,14 @@
 <li id="post-<%=post.id%>">
+  <div id="user-info">
+    <p><i class="far fa-user"></i><strong>UserName</strong></p>
+  </div>
   <div class="content">
     <%= image_tag post.picture.url if post.picture? %>
-    <%= post.caption if post.caption?%>
+    <i class="far fa-heart"></i>
+    <i class="far fa-comment"></i>
+  </div>
+  <div class="comments">
+    <p><strong>UserName </strong><%= post.caption if post.caption?%></p>
+    <p><strong>UserName </strong>This is where the likes and comment box will go</p>
   </div>
 </li>

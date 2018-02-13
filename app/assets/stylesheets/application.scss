@@ -2,6 +2,7 @@
 @import url('https://fonts.googleapis.com/css?family=Pacifico');
 
 $section-border: rgba(202, 203, 202, 0.74);
+$page-background-color: #f4f4f4;
 
 @mixin box-sizing {
   -moz-box-sizing: border-box;
@@ -11,6 +12,10 @@ $section-border: rgba(202, 203, 202, 0.74);
 
 section {
   overflow: auto;
+}
+
+body {
+  background: $page-background-color;
 }
 
 .center {
@@ -23,10 +28,14 @@ section {
   background-color: white !important;
   border-top: 1px solid $section-border;
   border-bottom: 1px solid $section-border;
+  .fa-camera-retro{
+    font-size: 2em;
+  }
   .navbar-brand {
     font-family: 'Pacifico', cursive;
     font-size: 2em;
     letter-spacing: 2px;
+    margin-left: 20px;
   }
 }
 
@@ -83,13 +92,43 @@ input {
   list-style: none;
   padding: 0;
   li {
+    background: white;
     padding: 10px 0px;
+    border: 1px solid $section-border;
+    margin: 20px 0px;
+  }
+  #user-info {
+    height: 50px;
+    margin-left: 10px;
+    strong {
+      margin-left: 10px;
+    }
   }
   .content {
     display: block;
     img {
+      width: 100%;
       display: block;
       margin: auto;
     }
+    .svg-inline--fa {
+      margin: 5px 10px;
+      font-size: 1.5em;
+    }
+  }
+  .comments {
+    margin-top: 5px;
+    margin-left: 10px;
+    p {
+      display: block;
+      line-height: 0.5em
+    }
+  }
+}
+
+#post-form {
+  margin-top: 20px;
+  label {
+    width: 100%;
   }
 }

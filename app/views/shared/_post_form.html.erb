@@ -1,11 +1,14 @@
 <div id="post-form">
-  <h3>New post</h2>
     <%= form_for(@post) do |f| %>
-      <span class="picture">
-      <%= f.file_field :picture,
-                       accept: 'image/jpeg, image/gif, image/png' %>
+    <label class="btn btn-primary">
+      Select your photo
+      <span style="display:none;">
+        <%= f.file_field :picture,
+                         accept: 'image/jpeg, image/gif, image/png' %>
       </span>
-      <%= f.text_area :caption, placeholder: 'Give your photo a caption...' %>
+    </label>
+      <%= f.text_area :caption, placeholder: 'Give your photo a caption...',
+                      class: 'form-control' %>
       <%= f.submit 'Post', class: 'btn btn-primary' %>
     <% end %>
 </div>
