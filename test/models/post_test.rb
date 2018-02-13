@@ -28,4 +28,9 @@ class PostTest < ActiveSupport::TestCase
       @post.save
     end
   end
+
+  test 'returns most recent post first' do
+    @post = Post.new
+    assert_equal posts(:most_recent), Post.first
+  end
 end

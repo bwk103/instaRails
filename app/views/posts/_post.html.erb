@@ -11,4 +11,7 @@
     <p><strong>UserName </strong><%= post.caption if post.caption?%></p>
     <p><strong>UserName </strong>This is where the likes and comment box will go</p>
   </div>
+  <div class="time-posted">
+    <p><%= time_ago_in_words(post.created_at.time) %> ago</p>
+  </div>
 </li>
