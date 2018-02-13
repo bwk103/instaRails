@@ -1,5 +1,5 @@
 <div id="post-form">
-    <%= form_for(@post) do |f| %>
+    <%= form_for(@post, remote: true) do |f| %>
     <label class="btn btn-primary">
       Select your photo
       <span style="display:none;">

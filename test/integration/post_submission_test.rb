@@ -24,4 +24,14 @@ class PostSubmissionTest < ActionDispatch::IntegrationTest
     assert_redirected_to posts_path
   end
 
+  test 'submitting via AJAX' do
+    get posts_path
+    picture = fixture_file_upload('/test-cat.jpg', 'img/jpg')
+    assert_difference 'Post.count', 1 do
+      post posts_path, xhr:true, params: { post: { content: 'This is a cat',
+                                         picture: picture
+                                         }}
+    end
+  end
+
 end
