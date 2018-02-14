@@ -135,3 +135,33 @@ input {
     width: 100%;
   }
 }
+
+//Signup //
+
+input, select, {
+  border: 1px solid #bbb;
+  width: 100%;
+  margin-bottom: 15px;
+  @include box-sizing;
+}
+
+input {
+  height: auto !important;
+}
+
+.checkbox {
+  margin-top: -10px;
+  margin-bottom: 10px;
+  span {
+    margin-left: 20px;
+    font-weight: normal;
+  }
+}
+
+// User Page //
+
+#user-details {
+  h3 {
+    float: left
+  }
+}

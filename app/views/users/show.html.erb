@@ -1,0 +1,27 @@
+<% provide(:title, @user.name) %>
+<div class="row">
+  <div id="profile-photo"class="col-md-4">
+    <p>User image goes here!</p>
+  </div>
+  <div id="user-details" class="col-md-6">
+    <h4>
+      <%=@user.username %>
+      <span>
+        <%= link_to '#', class:'btn btn-outline-dark' do %>
+          Edit Profile <i class="fas fa-cog"></i>
+        <% end %>
+      </span>
+    </h4>
+    <div id="user-stats">
+      <strong>1</strong>post
+      <strong>42</strong> followers
+      <strong>34</strong> following
+    </div>
+    <strong><%= @user.name %></strong>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <p>You've not posted anything yet</p>
+  </div>
+</div>

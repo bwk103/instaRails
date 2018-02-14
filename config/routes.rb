@@ -3,4 +3,6 @@ Rails.application.routes.draw do
   get 'static_pages/home'
   get '/about', to: 'static_pages#about'
   resources :posts
+  resources :users
+  get '/signup', to: 'users#new'
 end
