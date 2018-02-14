@@ -22,6 +22,15 @@ class UserTest < ActiveSupport::TestCase
     assert @user.valid?
   end
 
+  test 'email requires necessary format' do
+    @user = User.new
+    @user.name = 'Bob'
+    @user.email = 'not_an_email'
+    assert_not @user.valid?
+    @user.email = 'bob@test.com'
+    assert @user.valid?
+  end
+
   test 'email is unique' do
     User.create!(name: 'Bob', email: 'bob@test.com')
     @user = User.new
