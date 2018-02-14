@@ -13,6 +13,8 @@ gem 'bootstrap', '~> 4.0.0'
 # Use bootstrap on the frontend
 gem 'jquery-rails'
 # Use jQuery on the frontend
+gem 'bcrypt'
+#Use bcrypt for password storage
 gem 'sqlite3'
 # Use Puma as the app server
 gem 'puma', '~> 3.7'
