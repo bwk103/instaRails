@@ -8,9 +8,4 @@ class User < ApplicationRecord
   validates :password, presence: true, length: { minimum: 5 }
 
 
-  def authenticate
-
-  end
-
-
 end
