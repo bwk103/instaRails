@@ -18,7 +18,6 @@ class UsersLogInTest < ActionDispatch::IntegrationTest
     assert_redirected_to @user
     follow_redirect!
     assert_select 'a[href=?]', signup_path, count: 0
-    assert_select 'a[href=?]', login_path, count: 0
     assert_select 'a', text: 'Sign Out', count: 1
     assert_template 'users/show'
   end
@@ -36,5 +35,18 @@ class UsersLogInTest < ActionDispatch::IntegrationTest
     assert_select 'a[href=?]', login_path
     assert_select 'a', text: 'Sign Out', count: 0
     assert_template 'sessions/new'
+  end
+
+  test 'log in and log out test' do
+    get login_path
+    assert_not is_logged_in?
+    post login_path, params: { session: { username: @user.username,
+                                          password: 'password' }}
+    assert is_logged_in?
+    delete login_path
+    assert_not is_logged_in?
+    assert_redirected_to root_url
+    follow_redirect!
+    assert_template 'static_pages/home'
   end
 end
