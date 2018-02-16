@@ -1,5 +1,6 @@
 class Post < ApplicationRecord
 
+  belongs_to :user
   validates :caption, length: { maximum: 2200 }
   default_scope -> { order(created_at: :desc) }
   validates :picture, presence: true

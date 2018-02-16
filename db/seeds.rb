@@ -6,27 +6,55 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+User.create!(
+  name: 'James Example',
+  username: 'james123',
+  email: 'james@test.com',
+  password: 'password',
+  password_confirmation: 'password'
+)
+
+User.create!(
+  name: 'Mia Example',
+  username: 'mia123',
+  email: 'mia@test.com',
+  password: 'password',
+  password_confirmation: 'password'
+)
+User.create!(
+  name: 'Laura Example',
+  username: 'laura123',
+  email: 'laura@test.com',
+  password: 'password',
+  password_confirmation: 'password'
+)
+
 Post.create!(
   picture: File.open(Rails.root + "app/assets/images/seed_images/1.jpg"),
-  caption: 'The coffee here is out of this world!'
+  caption: 'The coffee here is out of this world!',
+  user: User.first
 )
 
 Post.create!(
   picture: File.open(Rails.root + "app/assets/images/seed_images/2.jpg"),
-  caption: 'Stag Stag Stag'
+  caption: 'Stag Stag Stag',
+  user: User.first
 )
 
 Post.create!(
   picture: File.open(Rails.root + "app/assets/images/seed_images/3.jpg"),
-  caption: 'You stay classy NYC'
+  caption: 'You stay classy NYC',
+  user: User.first
 )
 
 Post.create!(
   picture: File.open(Rails.root + "app/assets/images/seed_images/4.jpg"),
-  caption: 'Around the world at Epcot!'
+  caption: 'Around the world at Epcot!',
+  user: User.first
 )
 
 Post.create!(
   picture: File.open(Rails.root + "app/assets/images/seed_images/5.jpg"),
-  caption: 'I feel the same way on a Monday morning'
+  caption: 'I feel the same way on a Monday morning',
+  user: User.first
 )
