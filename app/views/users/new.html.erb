@@ -6,6 +6,16 @@
 
       <%= render 'shared/error_messages' %>
 
+      <label class="btn btn-primary">
+        Profile image
+        <span style="display:none;">
+          <%= f.file_field :profile,
+                           accept: 'image/jpeg, image/gif, image/png' %>
+        </span>
+      </label>
+
+      <br>
+
       <%= f.label :name %>
       <%= f.text_field :name, class: 'form-control' %>
 
