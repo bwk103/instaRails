@@ -155,6 +155,19 @@ input {
 
 //Forms //
 
+#img_prev {
+  display: block;
+  margin: auto;
+  border-radius: 50%;
+  margin-bottom: -20px;
+}
+
+label.btn.btn-primary {
+  width: 50%;
+  display: block;
+  margin: auto;
+}
+
 input, select, {
   border: 1px solid #bbb;
   width: 100%;
