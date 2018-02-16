@@ -1,7 +1,7 @@
 <% provide(:title, @user.name) %>
 <div class="row">
-  <div id="profile-photo"class="col-md-4">
-    <p>User image goes here!</p>
+  <div id="profile-photo"class="col-md-4 center">
+    <img src="https://randomuser.me/api/portraits/men/52.jpg" alt="">
   </div>
   <div id="user-details" class="col-md-6">
     <h4>
@@ -13,11 +13,13 @@
       </span>
     </h4>
     <div id="user-stats">
-      <strong>1</strong>post
-      <strong>42</strong> followers
-      <strong>34</strong> following
+      <span>
+        <p><strong>1</strong>post</p>
+        <p><strong>42</strong> followers</p>
+        <p><strong>34</strong> following</p>
+      </span>
+      <p><strong id="user-name"><%= @user.name %></strong></p>
     </div>
-    <strong><%= @user.name %></strong>
   </div>
 </div>
 <div class="row">

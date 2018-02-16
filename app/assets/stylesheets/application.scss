@@ -22,6 +22,10 @@ body {
   text-align: center
 }
 
+#main {
+  margin-top: 20px;
+}
+
 // Navbar //
 
 .navbar {
@@ -35,6 +39,11 @@ body {
     font-family: 'Pacifico', cursive;
     font-size: 2em;
     letter-spacing: 2px;
+    margin-left: 20px;
+  }
+
+  svg {
+    font-size: 1.5em;
     margin-left: 20px;
   }
 }
@@ -89,6 +98,7 @@ input {
 //Posts//
 
 .posts {
+  margin-top: -20px;
   list-style: none;
   padding: 0;
   li {
@@ -130,7 +140,6 @@ input {
 }
 
 #post-form {
-  margin-top: 20px;
   label {
     width: 100%;
   }
@@ -166,10 +175,21 @@ input {
   }
 }
 
-// User Page //
+// User Profile //
+
+#profile-photo {
+  img {
+    border-radius: 50%;
+  }
+}
 
 #user-details {
   h3 {
+    float: left
+  }
+  p {
+    margin-top: 5px;
+    margin-right: 20px;
     float: left
   }
 }

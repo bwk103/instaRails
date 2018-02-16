@@ -18,7 +18,7 @@ class UsersLogInTest < ActionDispatch::IntegrationTest
     assert_redirected_to @user
     follow_redirect!
     assert_select 'a[href=?]', signup_path, count: 0
-    assert_select 'a', text: 'Sign Out', count: 1
+    assert_select 'a[href=?]', login_path, method: 'delete', count: 1
     assert_template 'users/show'
   end
 
