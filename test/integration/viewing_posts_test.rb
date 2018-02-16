@@ -8,6 +8,6 @@ class ViewingPostsTest < ActionDispatch::IntegrationTest
 
   test 'users can see individual posts and details' do
     get posts_path
-    assert_match @user.name, response.body
+    assert_match @user.username, response.body
   end
 end
