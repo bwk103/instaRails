@@ -14,7 +14,10 @@
       </span>
     </h4>
     <div id="user-stats">
-      <p><strong>1</strong> post&emsp;<strong>42</strong> followers&emsp;<strong>34</strong> following  </p>
+      <p><strong><%= @user.posts.count %></strong> <%= 'post'.pluralize(@user.posts.count) %>&emsp;
+         <strong>42</strong> followers&emsp;
+         <strong>34</strong> following
+      </p>
       <p><strong id="user-name"><%= @user.name %></strong></p>
     </div>
   </div>

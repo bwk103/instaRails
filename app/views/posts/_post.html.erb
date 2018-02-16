@@ -1,5 +1,6 @@
 <li id="post-<%=post.id%>">
   <div class="image-header">
+    <%= image_tag post.user.profile, id: 'image-header-profile' %>
     <h6><%= post.user.username %></h6>
   </div>
   <div class="content">

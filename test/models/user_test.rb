@@ -1,6 +1,7 @@
 require 'test_helper'
 
 class UserTest < ActiveSupport::TestCase
+  include ActionDispatch::TestProcess
 
   def setup
     @user = User.new(name: 'Bob Smith', username: 'bobby',
@@ -53,5 +54,12 @@ class UserTest < ActiveSupport::TestCase
   test 'password should have a minimum length of 5' do
     @user.password = @user.password_confirmation = 'test'
     assert_not @user.valid?
+  end
+
+  test 'users can save profile image' do
+    profile = fixture_file_upload('/43.jpg', 'img/jpg')
+    @user.profile = profile
+    @user.save
+    assert_not User.last.profile.nil?
   end
 end

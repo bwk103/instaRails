@@ -118,8 +118,15 @@ input {
     padding: 16px;
     -webkit-align-items: center;
     img {
+      position: absolute;
+      top: 15px;
+      border-radius: 50%;
       height: 40px;
       width: 40px;
+      margin-right: auto;
+    }
+    h6 {
+      margin-left: 50px;
     }
   }
   .content {

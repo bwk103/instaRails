@@ -12,10 +12,11 @@
 
       <div class="form-group">
         <label class="btn btn-primary btn-file">
-           Add profile picture <input type="file" id='profile-upload' style="display: none;">
+           Add profile picture       <%= f.file_field :profile, id: 'profile-upload', style: 'display:none;' %>
         </label>
         <%= f.hidden_field :profile_cache %>
       </div>
+
 
       <%= f.label :name %>
       <%= f.text_field :name, class: 'form-control' %>
