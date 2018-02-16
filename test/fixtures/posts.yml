@@ -2,13 +2,16 @@ first:
   caption: "I just ate an orange!"
   created_at: <%= 10.minutes.ago %>
   picture: 'test-cat.jpg'
+  user: james
 
 second:
   caption: "Hello from the Moon!"
   created_at: <%= 12.minutes.ago %>
   picture: 'test-cat.jpg'
+  user: james
 
 most_recent:
   caption: "Writing a short test"
   created_at: <%= Time.zone.now %>
   picture: 'test-cat.jpg'
+  user: james

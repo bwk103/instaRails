@@ -1,6 +1,11 @@
 require 'test_helper'
 
 class StaticPagesControllerTest < ActionDispatch::IntegrationTest
+
+  def setup
+    @user = users(:james)
+  end
+
   test "should get home" do
     get static_pages_home_url
     assert_response :success
@@ -19,6 +24,14 @@ class StaticPagesControllerTest < ActionDispatch::IntegrationTest
     get about_url
     assert_response :success
     assert_select "title", text: 'About | instaRails'
+  end
+
+  test 'profile page' do
+    log_in_as(@user)
+    get user_path(@user)
+    assert_match @user.username, response.body
+    assert_match @user.name, response.body
+    assert_match @user.posts.count.to_s, response.body
   end
 
 end

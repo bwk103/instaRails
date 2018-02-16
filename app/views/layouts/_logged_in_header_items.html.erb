@@ -1,4 +1,9 @@
 <li class="nav-item">
+  <%= link_to new_post_path, class: 'nav-link' do %>
+  <i class="fas fa-camera"></i>
+  <% end %>
+</li>
+<li class="nav-item">
   <%= link_to current_user, class: 'nav-link' do %>
     <i class="far fa-user"></i>
   <% end %>
