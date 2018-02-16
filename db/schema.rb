@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180216102644) do
+ActiveRecord::Schema.define(version: 20180216155902) do
 
   create_table "posts", force: :cascade do |t|
     t.text "caption"
@@ -29,6 +29,7 @@ ActiveRecord::Schema.define(version: 20180216102644) do
     t.datetime "updated_at", null: false
     t.string "password_digest"
     t.string "username"
+    t.string "profile"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["username"], name: "index_users_on_username", unique: true
   end

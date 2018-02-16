@@ -8,6 +8,8 @@ class User < ApplicationRecord
                                     format: { with: VALID_EMAIL_REGEX }
   has_secure_password
   validates :password, presence: true, length: { minimum: 5 }
+  mount_uploader :profile, ProfileUploader
+
 
   def User.digest(password)
     cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST :
