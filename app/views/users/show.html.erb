@@ -24,7 +24,7 @@
   </div>
   <% if is_correct_user? %>
     <span>
-      <%= link_to user_path(current_user, method:'delete'), class:'btn btn-outline-danger' do %>
+      <%= link_to user_path(current_user), method: 'delete', class:'btn btn-outline-danger' do %>
         Delete Account <i class="fas fa-user-times"></i>
       <% end %>
     </span>

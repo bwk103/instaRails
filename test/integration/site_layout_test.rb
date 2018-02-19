@@ -33,9 +33,9 @@ class SiteLayoutTest < ActionDispatch::IntegrationTest
     assert_match @user.posts.count.to_s, response.body
     assert_match @user.name, response.body
     assert_select 'a[href=?]', edit_user_path(@user)
-    assert_select 'a[href=?]', user_path(@user, method: 'delete')
+    assert_select 'a', text: 'Delete Account'
     get user_path(@user2)
     assert_select 'a[href=?]', edit_user_path(@user2), count: 0
-    assert_select 'a[href=?]', user_path(@user, method: 'delete'), count: 0
+    assert_select 'a', text: 'Delete Account', count: 0
   end
 end
