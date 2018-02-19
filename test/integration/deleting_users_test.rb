@@ -20,4 +20,11 @@ class DeletingUsersTest < ActionDispatch::IntegrationTest
       delete user_path(@user)
     end
   end
+
+  test 'deleting users also deletes their posts' do
+    log_in_as(@user)
+    assert_difference 'Post.count', -3 do
+      delete user_path(@user)
+    end
+  end
 end
