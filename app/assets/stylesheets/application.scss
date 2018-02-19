@@ -108,6 +108,9 @@ input {
     padding: 10px 0px;
     border: 1px solid $section-border;
     margin: 20px 0px;
+    a {
+      color: inherit;
+    }
     img {
       border-top: 1px solid $section-border;
       border-bottom: 1px solid $section-border;

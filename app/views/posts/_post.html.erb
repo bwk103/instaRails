@@ -1,7 +1,7 @@
 <li id="post-<%=post.id%>">
   <div class="image-header">
-    <%= image_tag post.user.profile, id: 'image-header-profile' %>
-    <h6><%= post.user.username %></h6>
+    <%= link_to image_tag(post.user.profile, id: 'image-header-profile'), user_url(post.user) %>
+    <h6><%= link_to post.user.username, user_url(post.user) %></h6>
   </div>
   <div class="content">
     <%= image_tag post.picture.url %>
@@ -9,11 +9,10 @@
     <i class="far fa-comment"></i>
   </div>
   <div class="comments">
-    <p><strong><%= post.user.username %> </strong><%= post.caption if post.caption?%></p>
+    <p><strong><%= link_to post.user.username, user_url(post.user) %> </strong><%= post.caption if post.caption?%></p>
     <p><strong>UserName </strong>This is where the likes and comment box will go</p>
   </div>
   <div class="time-posted">
     <p><%= time_ago_in_words(post.created_at.time) %> ago</p>
   </div>
 </li>
- 

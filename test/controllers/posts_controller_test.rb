@@ -11,4 +11,10 @@ class PostsControllerTest < ActionDispatch::IntegrationTest
     assert_redirected_to login_url
   end
 
+  test 'logged in users can access new post page' do
+    log_in_as(@user)
+    get new_post_path
+    assert_template 'posts/new'
+  end
+
 end
