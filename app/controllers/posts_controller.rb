@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
-  before_action :logged_in_user, only: [:new, :create]
+  before_action :logged_in_user, only: [:new, :create, :destroy]
+  before_action :correct_user, only: [:destroy]
 
   def index
     @posts = Post.all
@@ -19,11 +20,22 @@ class PostsController < ApplicationController
     end
   end
 
+  def destroy
+    Post.find(params[:id]).destroy
+    flash[:success] = "Post deleted successfully"
+    redirect_to posts_path
+  end
+
 
   private
 
   def post_params
     params.require(:post).permit(:picture, :caption)
+  end
+
+  def correct_user
+    @user = Post.find(params[:id]).user
+    redirect_to root_url unless @user == current_user
   end
 
 end
