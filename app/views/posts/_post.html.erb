@@ -7,6 +7,11 @@
     <%= image_tag post.picture.url %>
     <i class="far fa-heart"></i>
     <i class="far fa-comment"></i>
+    <% if logged_in? && is_author?(post.id) %>
+    <%= link_to post_path(post.id), method: 'delete'  do %>
+      <i class="far fa-trash-alt"></i>
+      <% end %>
+    <% end %>
   </div>
   <div class="comments">
     <p><strong><%= link_to post.user.username, user_url(post.user) %> </strong><%= post.caption if post.caption?%></p>
