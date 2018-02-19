@@ -3,12 +3,33 @@
     <label class="btn btn-primary">
       Select your photo
       <span style="display:none;">
-        <%= f.file_field :picture,
+        <%= f.file_field :picture, id: 'post-preview',
                          accept: 'image/jpeg, image/gif, image/png' %>
       </span>
+      <%= f.hidden_field :picture_cache %>
     </label>
+    <br>
       <%= f.text_area :caption, placeholder: 'Give your photo a caption...',
                       class: 'form-control' %>
       <%= f.submit 'Post', class: 'btn btn-primary' %>
     <% end %>
 </div>
+<script type="text/javascript">
+  $(function(){
+    function readURL(input) {
+      if (input.files && input.files[0]) {
+        var reader = new FileReader();
+
+        reader.onload = function(e) {
+          $('#post_prev').attr('src', e.target.result);
+        }
+        reader.readAsDataURL(input.files[0]);
+      }
+    }
+
+    $('#post-preview').change(function(){
+      $('#post-prev').removeClass('hidden');
+      readURL(this);
+    });
+  });
+</script>
