@@ -8,11 +8,10 @@
       <%=@user.username %>
     </h3>
       <span>
-        <%= link_to '#', class:'btn btn-outline-dark' do %>
+        <%= link_to edit_user_path(current_user), class:'btn btn-outline-dark' do %>
           Edit Profile <i class="fas fa-cog"></i>
         <% end %>
       </span>
-    </h4>
     <div id="user-stats">
       <p><strong><%= @user.posts.count %></strong> <%= 'post'.pluralize(@user.posts.count) %>&emsp;
          <strong>42</strong> followers&emsp;
