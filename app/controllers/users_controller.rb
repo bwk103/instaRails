@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
-  before_action :logged_in_user, only: [:edit]
-  before_action :correct_user, only: [:edit]
+  before_action :logged_in_user, only: [:edit, :destroy]
+  before_action :correct_user, only: [:edit, :destroy]
 
   def new
     @user = User.new
@@ -33,6 +33,12 @@ class UsersController < ApplicationController
     else
       render 'users/edit'
     end
+  end
+
+  def destroy
+    current_user.delete
+    flash[:danger] = "User successfully deleted"
+    redirect_to root_url
   end
 
   private

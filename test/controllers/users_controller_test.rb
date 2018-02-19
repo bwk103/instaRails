@@ -59,4 +59,22 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
                             }}
     assert_redirected_to @user
   end
+
+  test 'delete redirected if not logged in' do
+    delete user_path(@user)
+    assert_redirected_to(login_url)
+  end
+
+  test 'delete redirected if not logged in as correct user' do
+    log_in_as(@user)
+    delete user_path(@user2)
+    assert_redirected_to root_url
+  end
+
+  test 'valid delete request redirected to root' do
+    log_in_as(@user)
+    delete user_path(@user)
+    assert assert_redirected_to root_url
+    assert_not flash.empty?
+  end
 end
