@@ -1,0 +1,5 @@
+<% if @user.profile.blank? %>
+  <p class="stock-profile-image"><i class="fas fa-user"></i></p>
+<% else %>
+  <%= image_tag @user.profile %>
+<% end %>

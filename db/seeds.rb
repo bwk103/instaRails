@@ -11,7 +11,8 @@ User.create!(
   username: 'james123',
   email: 'james@test.com',
   password: 'password',
-  password_confirmation: 'password'
+  password_confirmation: 'password',
+  profile: File.open(Rails.root + "app/assets/images/seed_images/user3.jpg")
 )
 
 User.create!(
@@ -19,14 +20,16 @@ User.create!(
   username: 'mia123',
   email: 'mia@test.com',
   password: 'password',
-  password_confirmation: 'password'
+  password_confirmation: 'password',
+  profile: File.open(Rails.root + "app/assets/images/seed_images/user1.jpg")
 )
 User.create!(
   name: 'Laura Example',
   username: 'laura123',
   email: 'laura@test.com',
   password: 'password',
-  password_confirmation: 'password'
+  password_confirmation: 'password',
+  profile: File.open(Rails.root + "app/assets/images/seed_images/user2.jpg")
 )
 
 Post.create!(

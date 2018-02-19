@@ -114,19 +114,20 @@ input {
     }
   }
   .image-header {
-    height: 60px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    align-content: center;
     padding: 16px;
     -webkit-align-items: center;
     img {
-      position: absolute;
-      top: 15px;
+      align-self: flex-end;
       border-radius: 50%;
       height: 40px;
-      width: 40px;
-      margin-right: auto;
     }
     h6 {
-      margin-left: 50px;
+      margin-left: 15px;
     }
   }
   .content {
@@ -208,6 +209,10 @@ input {
 #profile-photo {
   img {
     border-radius: 50%;
+  }
+
+  .stock-profile-image {
+    font-size: 4em;
   }
 }
 
