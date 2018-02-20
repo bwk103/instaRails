@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'comments/create'
+
+  get 'comments/destroy'
+
   get 'sessions/new'
 
   root 'static_pages#home'
