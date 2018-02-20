@@ -20,4 +20,7 @@
   <div class="time-posted">
     <p><%= time_ago_in_words(post.created_at.time) %> ago</p>
   </div>
+  <% if logged_in? %>
+    <%= render 'comments/comment_form', post: post %>
+  <% end %>
 </li>
