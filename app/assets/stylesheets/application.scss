@@ -98,6 +98,7 @@ input {
 //Posts//
 
 .posts {
+  font-size: 14px;
   margin-left: 20px;
   width: 616px;
   margin-top: -20px;
@@ -105,11 +106,14 @@ input {
   padding: 0;
   li {
     background: white;
-    padding: 10px 0px;
     border: 1px solid $section-border;
     margin: 20px 0px;
+    margin-bottom: 0px;
+    padding-bottom: 0px;
     a {
       color: inherit;
+      font-size: 14px;
+      font-weight: 500;
     }
     img {
       border-top: 1px solid $section-border;
@@ -129,8 +133,9 @@ input {
       border-radius: 50%;
       height: 40px;
     }
-    h6 {
-      margin-left: 15px;
+    a {
+      color: 262626;
+      font-weight: 600px;
     }
   }
   .content {
@@ -146,6 +151,7 @@ input {
     }
   }
   .caption {
+    font-weight: 500;
     margin-left: 10px;
   }
   .comments {
@@ -155,12 +161,49 @@ input {
       display: block;
       line-height: 0.5em
     }
-    a {
+    span#delete {
       margin-right: 20px;
       float: right;
     }
   }
+
+  #comment-form {
+    display: flex;
+    flex-direction: row;
+    flex-shrink: none;
+    margin-top: 4px;
+    padding-right: 26px;
+    border-top: 1px solid #efefef;
+    color: #999;
+    font-size: 14px;
+    line-height: 18px;
+    min-height: 36px;
+    padding: 16px 0;
+    align-items: baseline;
+    #new_comment {
+      display: flex;
+      align-items: center;
+      flex-direction: row;
+      margin-left: 10px;
+      width: 100%;
+      position: relative;
+      margin: 0;
+      padding: 0;
+      border: 0;
+    }
+    input {
+      margin-left: 10px;
+      text-align: start;
+      width: 90%;
+      outline: none!important;
+      border: none;
+    }
+  }
   .time-posted {
+    color: rgb(171, 170, 170);
+    font-size: 10px;
+    letter-spacing: .2px;
+    text-transform: uppercase;
     margin-left: 10px;
   }
 }
@@ -253,14 +296,6 @@ input {
 .image-preview {
   height: 302px;
   width: 100%;
-}
-
-#comment-form {
-  input {
-    border: none;
-    height: 18px!important;
-    margin-bottom: inherit;
-  }
 }
 
 // New Post

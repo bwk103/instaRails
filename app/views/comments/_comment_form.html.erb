@@ -1,7 +1,6 @@
 <div id="comment-form">
     <%= form_for(@comment) do |f| %>
-      <%= f.text_field :content, placeholder: 'Add a comment...',
-                      class: 'form-control' %>
+      <%= f.text_field :content, placeholder: 'Add a comment...' %>
       <%= f.hidden_field :post_id, value: post.id %>
     <% end %>
 </div>

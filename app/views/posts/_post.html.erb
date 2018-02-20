@@ -1,7 +1,7 @@
 <li id="post-<%=post.id%>">
   <div class="image-header">
     <%= link_to image_tag(post.user.profile, id: 'image-header-profile'), user_url(post.user) %>
-    <h6><%= link_to post.user.username, user_url(post.user) %></h6>
+    <%= link_to post.user.username, user_url(post.user) %>
   </div>
   <div class="content">
     <%= image_tag post.picture.url %>
@@ -14,17 +14,10 @@
     <% end %>
   </div>
   <div class="caption">
-    <p><strong><%= link_to post.user.username, user_url(post.user) %> </strong><%= post.caption if post.caption?%></p>
+    <p><%= link_to post.user.username, user_url(post.user) %> <%= post.caption if post.caption?%></p>
   </div>
   <% if !post.comments.empty? %>
-    <div class="comments">
-      <p><strong><%= post.comments.last.user.username %>
-        </strong> <%= post.comments.last.content %>
-        <% if logged_in? && comment_author?(post.comments.last.id) %>
-          <span><%= link_to 'Delete', comment_path(post.comments.last), method: 'delete' %></span>
-        <% end %>
-      </p>
-    </div>
+    <%= render 'comments/comment', post: post %>
   <% end %>
   <div class="time-posted">
     <p><%= time_ago_in_words(post.created_at.time) %> ago</p>
