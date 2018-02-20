@@ -4,7 +4,9 @@ class CommentsControllerTest < ActionDispatch::IntegrationTest
 
   def setup
     @user = users(:james)
+    @user2 = users(:mike)
     @post = posts(:first)
+    @comment = comments(:one)
   end
 
   test "should redirect create if not logged in" do
@@ -32,6 +34,24 @@ class CommentsControllerTest < ActionDispatch::IntegrationTest
                                            }
     }
     assert_redirected_to posts_path
+  end
+
+  test 'delete requests redirected if not logged in' do
+    delete comment_path(@comment)
+    assert_redirected_to login_url
+  end
+
+  test 'delete requests redirected if not correct user' do
+    log_in_as(@user2)
+    delete comment_path(@comment)
+    assert_redirected_to posts_path
+  end
+
+  test 'valid delete requests remove comment' do
+    log_in_as(@user)
+    assert_difference 'Comment.count', -1 do
+      delete comment_path(@comment)
+    end
   end
 
 end
