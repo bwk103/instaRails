@@ -4,7 +4,9 @@ class CommentTest < ActiveSupport::TestCase
 
   def setup
     @user = users(:james)
-    @comment = Comment.new(content: 'This is a test comment', user_id: @user.id)
+    @post = posts(:first)
+    @comment = Comment.new(content: 'This is a test comment', user_id: @user.id,
+                           post_id: @post.id)
   end
 
   test "should be valid" do
@@ -21,8 +23,13 @@ class CommentTest < ActiveSupport::TestCase
     assert_not @comment.valid?
   end
 
-  test 'content must have a user_id' do
+  test 'comment must belong to a user' do
     @comment.user_id = nil
+    assert_not @comment.valid?
+  end
+
+  test 'comment must belong to a post' do
+    @comment.post_id = nil
     assert_not @comment.valid?
   end
 end
