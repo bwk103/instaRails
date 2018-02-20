@@ -6,6 +6,7 @@ class PostTest < ActiveSupport::TestCase
   def setup
     @user = users(:james)
     picture = fixture_file_upload('/test-cat.jpg', 'img/jpg')
+    @comment = Comment.new(content: 'This is a comment')
     @post = Post.new(caption: 'This is a test', user_id: @user.id,
                      picture: picture)
   end
@@ -33,4 +34,5 @@ class PostTest < ActiveSupport::TestCase
   test 'returns most recent post first' do
     assert_equal posts(:most_recent), Post.first
   end
+
 end
