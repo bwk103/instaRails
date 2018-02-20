@@ -145,6 +145,9 @@ input {
       font-size: 1.5em;
     }
   }
+  .caption {
+    margin-left: 10px;
+  }
   .comments {
     margin-top: 5px;
     margin-left: 10px;
@@ -246,6 +249,14 @@ input {
 .image-preview {
   height: 302px;
   width: 100%;
+}
+
+#comment-form {
+  input {
+    border: none;
+    height: 18px!important;
+    margin-bottom: inherit;
+  }
 }
 
 // New Post

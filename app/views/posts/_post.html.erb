@@ -13,10 +13,14 @@
       <% end %>
     <% end %>
   </div>
-  <div class="comments">
+  <div class="caption">
     <p><strong><%= link_to post.user.username, user_url(post.user) %> </strong><%= post.caption if post.caption?%></p>
-    <p><strong>UserName </strong>This is where the likes and comment box will go</p>
   </div>
+  <% if !post.comments.empty? %>
+    <div class="comments">
+      <p><strong><%= post.comments.last.user.username %></strong> <%= post.comments.last.content %></p>
+    </div>
+  <% end %>
   <div class="time-posted">
     <p><%= time_ago_in_words(post.created_at.time) %> ago</p>
   </div>
