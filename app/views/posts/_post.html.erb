@@ -18,7 +18,12 @@
   </div>
   <% if !post.comments.empty? %>
     <div class="comments">
-      <p><strong><%= post.comments.last.user.username %></strong> <%= post.comments.last.content %></p>
+      <p><strong><%= post.comments.last.user.username %>
+        </strong> <%= post.comments.last.content %>
+        <% if logged_in? && comment_author?(post.comments.last.id) %>
+          <span><%= link_to 'Delete', comment_path(post.comments.last), method: 'delete' %></span>
+        <% end %>
+      </p>
     </div>
   <% end %>
   <div class="time-posted">
