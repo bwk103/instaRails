@@ -1,0 +1,14 @@
+<div class="mini_user">
+  <div class="user-list-profile">
+    <%= image_tag user.profile %>
+  </div>
+  <div class="user-list-details">
+    <%= link_to user.username, user %>
+    <% if !user.posts.empty? %>
+        <p>Last Post: <%= time_ago_in_words(user.posts.last.created_at) %> ago</p>
+      <% else %>
+        <p>Yet to Post</p>
+      <% end %>
+  </div>
+
+</div>

@@ -124,17 +124,17 @@ input {
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
-    align-items: flex-start;
-    align-content: center;
     padding: 16px;
     -webkit-align-items: center;
     img {
       align-self: flex-end;
       border-radius: 50%;
       height: 40px;
+      margin-right: 10px;
     }
     a {
-      color: 262626;
+      color: rgb(38, 38, 38);
+      font-size: 14px;
       font-weight: 600px;
     }
   }
@@ -151,8 +151,16 @@ input {
     }
   }
   .caption {
-    font-weight: 500;
     margin-left: 10px;
+    a {
+      color: rgb(38, 38, 38);
+      font-size: 14px;
+      font-weight: 600;
+    }
+    p {
+      font-size: 14px;
+      font-weight: 400;
+    }
   }
   .comments {
     margin-top: 5px;
@@ -211,6 +219,109 @@ input {
 #post-form {
   label {
     width: 100%;
+  }
+}
+
+.user-list-heading {
+  display: flex;
+  flex-direction: row;
+  border-bottom: 1px solid #efefef;
+  height: 70px;
+
+  img {
+    margin-right: 10px;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+  }
+
+  .user-list-heading-details {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    a {
+      font-size: 14px;
+      font-weight: 600;
+      text-decoration: none;
+      color: #262626!important;
+      line-height: 18px;
+    }
+    p {
+      color: rgb(153, 153, 153);
+      font-size: 12px;
+      font-weight: 400px;
+      line-height: 14px;
+    }
+  }
+}
+
+.user-list {
+  .user-list-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  p {
+    color: rgb(153, 153, 153);
+    font-size: 14px;
+    font-weight: 600;
+  }
+  a {
+    color: rgb(38, 38, 38);
+    font-size: 14px;
+    font-weight: 600;
+  }
+  border-bottom: 1px solid #efefef;
+
+}
+
+.mini_user {
+  display: flex;
+  flex-direction: row;
+  height: 60px;
+  .user-list-profile{
+    img {
+      height: 50px;
+      width: 50px;
+      border-radius: 50%;
+      margin-right: 10px;
+    }
+  }
+  .user-list-details {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    a {
+      font-size: 14px;
+      font-weight: 600;
+      text-decoration: none;
+      color: #262626!important;
+      line-height: 18px;
+    }
+    p {
+      color: rgb(153, 153, 153);
+      font-size: 12px;
+      font-weight: 400px;
+      line-height: 14px;
+    }
+  }
+}
+
+.links {
+  display: flex;
+  ul {
+    list-style: none;
+    padding: 0px;
+    li {
+      color: rgb(199, 199, 199)!important;
+      display: inline-block;
+      margin-left: 0px;
+      font-weight: 400px;
+      font-size: 11px;
+      a {
+        color: rgb(199, 199, 199)!important;
+      }
+    }
   }
 }
 
