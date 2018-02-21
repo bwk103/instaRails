@@ -15,6 +15,7 @@ gem 'jquery-rails'
 # Use jQuery on the frontend
 gem 'bcrypt'
 #Use bcrypt for password storage
+gem 'acts_as_votable'
 gem 'sqlite3'
 # Use Puma as the app server
 gem 'puma', '~> 3.7'

@@ -12,7 +12,11 @@ Rails.application.routes.draw do
   get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'
   delete '/login', to: 'sessions#destroy'
-  resources :posts
+  resources :posts do
+    member do
+      get 'like'
+    end
+  end
   resources :users
   resources :comments, only: [:create, :destroy]
 end
