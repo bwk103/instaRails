@@ -13,8 +13,13 @@ class CommentsController < ApplicationController
   end
 
   def destroy
-    Comment.find(params[:id]).destroy
-    redirect_to posts_path
+    @comment = Comment.find(params[:id])
+    @post = @comment.post
+    @comment.destroy
+    respond_to do |format|
+      format.html { redirect_to posts_path }
+      format.js
+    end
   end
 
   private

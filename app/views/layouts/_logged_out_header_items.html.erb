@@ -1,6 +1,16 @@
 <li class="nav-item">
-  <a class="nav-link" href="<%= signup_path %>">Sign Up</a>
+  <%= link_to signup_path, class: 'nav-link',
+                             title: 'Sign Up',
+                             'data-toggle' => 'tooltip',
+                             'data-placement' => 'bottom' do %>
+    <i class="fas fa-user-plus"></i>
+  <% end %>
 </li>
 <li class="nav-item">
-  <a class="nav-link" href="<%= login_path %>">Log in</a>
+  <%= link_to login_path, class: 'nav-link',
+                             title: 'Log In',
+                             'data-toggle' => 'tooltip',
+                             'data-placement' => 'bottom' do %>
+    <i class="fas fa-sign-in-alt"></i>
+  <% end %>
 </li>

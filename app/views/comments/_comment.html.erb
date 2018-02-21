@@ -4,7 +4,7 @@
     <% end %>
   <%= link_to post.comments.last.user.username, post.comments.last.user %> <%= post.comments.last.content %>
     <% if logged_in? && comment_author?(post.comments.last.id) %>
-      <span id="delete"><%= link_to 'Delete', comment_path(post.comments.last), method: 'delete' %></span>
+      <span id="delete"><%= link_to 'Delete', comment_path(post.comments.last), remote: true, method: 'delete' %></span>
     <% end %>
   </p>
 </div>

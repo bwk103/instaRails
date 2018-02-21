@@ -1,15 +1,23 @@
 <li class="nav-item">
-  <%= link_to new_post_path, class: 'nav-link' do %>
-  <i class="fas fa-camera"></i>
+  <%= link_to new_post_path, class: 'nav-link',
+                             title: 'New Post',
+                             'data-toggle' => 'tooltip',
+                             'data-placement' => 'bottom' do %>
+    <i class="fas fa-camera"></i>
   <% end %>
 </li>
 <li class="nav-item">
-  <%= link_to current_user, class: 'nav-link' do %>
+  <%= link_to current_user, class: 'nav-link',
+                            title: 'Profile',
+                            'data-toggle' => 'tooltip',
+                            'data-placement' => 'bottom' do %>
     <i class="far fa-user"></i>
   <% end %>
 </li>
 <li class="nav-item">
-  <%= link_to login_path, method: 'delete', class: 'nav-link' do %>
+  <%= link_to login_path, method: 'delete', class: 'nav-link',
+                          title: 'Log Out', 'data-toggle' => 'tooltip',
+                          'data-placement' => 'bottom' do %>
     <i class="fas fa-sign-out-alt"></i>
   <% end %>
 </li>

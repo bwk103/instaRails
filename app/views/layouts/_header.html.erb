@@ -5,8 +5,11 @@
         <div class="navbar-nav">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item">
-              <%= link_to posts_path, class: 'nav-link' do %>
-              <i class="far fa-compass"></i>
+              <%= link_to posts_path, class: 'nav-link',
+                                              title: 'Posts',
+                                             'data-toggle' => 'tooltip',
+                                             'data-placement' => 'bottom' do %>
+                  <i class="far fa-compass"></i>
               <% end %>
             </li>
             <% if logged_in? %>
@@ -18,3 +21,8 @@
         </div>
     </div>
 </header>
+<script>
+$(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+})
+</script> 
