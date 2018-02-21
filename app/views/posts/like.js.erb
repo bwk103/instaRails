@@ -1,0 +1,2 @@
+$('#like_<%= @post.id %>').find('svg.fa-heart').replaceWith('<i class="fas fa-heart"></i>');
+$('#post-<%= @post.id %>').find('.number-of-likes').html("<%= liked_by(@post) %>");
