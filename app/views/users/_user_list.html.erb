@@ -1,0 +1,32 @@
+<div class="col-md-4">
+  <div class="user-list-heading">
+    <%= image_tag current_user.profile %>
+    <div class="user-list-heading-details">
+      <%= link_to current_user.username, current_user %>
+      <p><%= current_user.name %></p>
+    </div>
+  </div>
+  <div class="user-list">
+    <div class="user-list-content">
+      <p>Users</p>
+      <%= link_to 'View All', '#' %>
+    </div>
+    <% @users.each do |user| %>
+      <%= render 'users/mini_user', user: user %>
+    <% end %>
+  </div>
+  <div class="links">
+    <ul>
+      <li><a href="#">About Us</a> |</li>
+      <li><a href="#">Support</a> |</li>
+      <li><a href="#">Blog</a> |</li>
+      <li><a href="#">API</a> |</li>
+      <li><a href="#">Jobs</a> |</li>
+      <li><a href="#">Privacy</a></li><br>
+      <li><a href="#">Terms</a></li>
+      <li><a href="#">Directory</a> |</li>
+      <li><a href="#">Profiles</a> |</li>
+      <li><a href="#">Languages</a></li>
+    </ul>
+  </div>
+</div>

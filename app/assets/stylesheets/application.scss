@@ -151,6 +151,12 @@ input {
   }
   .content {
     display: block;
+    a {
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: none;
+    }
     img {
       // width: 100%;
       display: block;
