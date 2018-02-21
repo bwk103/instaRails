@@ -4,16 +4,16 @@
     <%= render 'users/profile_picture' %>
   </div>
   <div id="user-details" class="col-md-6">
-    <h3>
-      <%=@user.username %>
-    </h3>
-    <% if is_correct_user? %>
-      <span>
-        <%= link_to edit_user_path(current_user), class:'btn btn-outline-dark' do %>
-          Edit Profile <i class="fas fa-cog"></i>
-        <% end %>
-      </span>
-    <% end %>
+    <div class="name-and-buttons">
+      <h3><%=@user.username %></h3>
+      <% if is_correct_user? %>
+        <span>
+          <%= link_to edit_user_path(current_user), class:'btn btn-outline-dark' do %>
+            Edit Profile <i class="fas fa-cog"></i>
+          <% end %>
+        </span>
+      <% end %>
+    </div>
     <div id="user-stats">
       <p><strong><%= @user.posts.count %></strong> <%= 'post'.pluralize(@user.posts.count) %>&emsp;
          <strong>42</strong> followers&emsp;
@@ -22,7 +22,7 @@
       <p>
         <strong id="user-name"><%= @user.name %></strong>
         <% if @user.bio %>
-          <span> <%= @user.bio %></span>  
+          <span> <%= @user.bio %></span>
         <% end %>
       </p>
     </div>
