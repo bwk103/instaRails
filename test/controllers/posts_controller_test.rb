@@ -36,4 +36,30 @@ class PostsControllerTest < ActionDispatch::IntegrationTest
     assert_redirected_to posts_url
   end
 
+  test 'users redirected if try to like post when not logged in' do
+    get like_post_path(@post)
+    assert_redirected_to login_url
+  end
+
+  test 'users redirected if try to unlike post when not logged in' do
+    get unlike_post_path(@post)
+    assert_redirected_to login_url
+  end
+
+  test 'users can like posts' do
+    log_in_as(@user)
+    assert_difference '@post.get_likes.count', 1 do
+      get like_post_path(@post)
+    end
+  end
+
+  test 'users can unlike posts' do
+    log_in_as(@user)
+    assert_difference '@post.get_likes.count', 1 do
+      get like_post_path(@post)
+    end
+    assert_difference '@post.get_likes.count', -1 do
+      get unlike_post_path(@post)
+    end
+  end
 end
