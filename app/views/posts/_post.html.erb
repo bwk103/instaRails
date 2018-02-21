@@ -8,7 +8,9 @@
   </div>
   <div class="content">
     <%= image_tag post.picture.url %>
-    <i class="far fa-heart"></i>
+    <%= link_to like_post_path(post.id) do %>
+      <i class="far fa-heart"></i>
+    <% end %>
     <i class="far fa-comment"></i>
     <% if logged_in? && is_author?(post.id) %>
     <%= link_to post_path(post.id), method: 'delete'  do %>

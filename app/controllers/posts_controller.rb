@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  before_action :logged_in_user, only: [:new, :create, :destroy]
+  before_action :logged_in_user, only: [:new, :create, :destroy, :like]
   before_action :correct_user, only: [:destroy]
 
   def index
@@ -29,6 +29,13 @@ class PostsController < ApplicationController
   end
 
   def like
+    @post = Post.find(params[:id])
+    if @post.liked_by current_user
+      respond_to do |format|
+        format.html { redirect_to posts_url }
+        format.js
+      end
+    end
   end
 
 
