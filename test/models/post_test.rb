@@ -35,4 +35,19 @@ class PostTest < ActiveSupport::TestCase
     assert_equal posts(:most_recent), Post.first
   end
 
+  test 'posts can have a location' do
+    @post.location = 'Test Location'
+    assert @post.valid?
+  end
+
+  test 'posts may not have a location' do
+    @post.location = nil
+    assert @post.valid?
+  end
+
+  test 'locations have character limits of 100' do
+    @post.location = '@' * 101
+    assert_not @post.valid?
+  end
+
 end

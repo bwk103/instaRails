@@ -5,6 +5,7 @@ class Post < ApplicationRecord
   validates :caption, length: { maximum: 2200 }
   default_scope -> { order(created_at: :desc) }
   validates :picture, presence: true
+  validates :location, length: { maximum: 100 }
   mount_uploader :picture, PictureUploader
 
   private
