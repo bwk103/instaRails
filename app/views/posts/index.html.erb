@@ -39,3 +39,9 @@
     </div>
   <% end %>
 </div>
+<script>
+  $('li').on('click', '#user-com', function(e){
+    e.preventDefault()
+    $(this).closest('li').find('input#comment_content').focus()
+  })
+</script>
