@@ -1,1 +1,2 @@
 $('li#post-<%=@post.id%>').find('.comments').html("<%= j render 'comments/comment', post: @post%>")
+$('li#post-<%=@post.id%>').find('input#comment_content').val('')

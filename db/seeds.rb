@@ -10,6 +10,7 @@ User.create!(
   name: 'James Example',
   username: 'james123',
   email: 'james@test.com',
+  bio: 'Storyfinder, Citizen, Sock Hater, Perpetual Escapist, Unregulated Banker. A human. Being.'
   password: 'password',
   password_confirmation: 'password',
   profile: File.open(Rails.root + "app/assets/images/seed_images/user3.jpg")
@@ -17,16 +18,28 @@ User.create!(
 
 User.create!(
   name: 'Mia Example',
-  username: 'mia123',
+  username: 'maomao2012',
   email: 'mia@test.com',
+  bio: "Educator, Dancer, Oscar-loser, Information Addict, Ned Stark's Neck Stump. I am superb at parallel parking."
   password: 'password',
   password_confirmation: 'password',
   profile: File.open(Rails.root + "app/assets/images/seed_images/user1.jpg")
 )
 User.create!(
   name: 'Laura Example',
-  username: 'laura123',
+  username: 'lauraBear35',
   email: 'laura@test.com',
+  bio: "Filmmaker, Explorer, Political Activist, Dollar Store Owner, Cat Stroker. I don't believe in showers"
+  password: 'password',
+  password_confirmation: 'password',
+  profile: File.open(Rails.root + "app/assets/images/seed_images/user2.jpg")
+)
+
+User.create!(
+  name: 'Bruce Airplane',
+  username: 'bonzaBruce',
+  email: 'bruce@test.com',
+  bio: "Filmmaker, Explorer, Political Activist, Dollar Store Owner, Cat Stroker. I don't believe in showers"
   password: 'password',
   password_confirmation: 'password',
   profile: File.open(Rails.root + "app/assets/images/seed_images/user2.jpg")
@@ -41,19 +54,19 @@ Post.create!(
 Post.create!(
   picture: File.open(Rails.root + "app/assets/images/seed_images/2.jpg"),
   caption: 'Stag Stag Stag',
-  user: User.first
+  user: User.find(2)
 )
 
 Post.create!(
   picture: File.open(Rails.root + "app/assets/images/seed_images/3.jpg"),
   caption: 'You stay classy NYC',
-  user: User.first
+  user: User.find(3)
 )
 
 Post.create!(
   picture: File.open(Rails.root + "app/assets/images/seed_images/4.jpg"),
   caption: 'Around the world at Epcot!',
-  user: User.first
+  user: User.find(4)
 )
 
 Post.create!(

@@ -24,9 +24,7 @@
       <%= link_to post.user.username, user_url(post.user) %> <span><%= post.caption %></span>
     <% end %>
   </div>
-  <% if !post.comments.empty? %>
     <%= render 'comments/comment', post: post %>
-  <% end %>
   <div class="time-posted">
     <p><%= time_ago_in_words(post.created_at.time) %> ago</p>
   </div>

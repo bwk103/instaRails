@@ -4,8 +4,12 @@ class CommentsController < ApplicationController
 
   def create
     @comment = current_user.comments.build(comment_params)
+    @post = Post.find(params[:comment][:post_id])
     if @comment.save
-      redirect_to posts_path
+      respond_to do |format|
+        format.html { redirect_to posts_path }
+        format.js
+      end
     else
       flash[:danger] = 'There was a problem submitting your comment'
       redirect_to posts_path

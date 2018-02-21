@@ -1,5 +1,1 @@
-<div>
-  <ol id="comments_list">
-    <%= render 'comments/comment', post: post %>
-  </ol>
-</div>
+<%= link_to post.comments.last.user.username, post.comments.last.user %> <%= post.comments.last.content %>
