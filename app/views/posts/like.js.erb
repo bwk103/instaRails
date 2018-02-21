@@ -1,2 +1,3 @@
-$('#like_<%= @post.id %>').find('svg.fa-heart').replaceWith('<i class="fas fa-heart"></i>');
+$('#like_<%= @post.id %>').find('svg.fa-heart', 'i.fa-heart').replaceWith('<i class="fas fa-heart"></i>');
 $('#post-<%= @post.id %>').find('.number-of-likes').html("<%= liked_by(@post) %>");
+$('#post-<%= @post.id %>').find("#like_<%= @post.id %>").attr("href", "<%= unlike_post_path(@post) %>");

@@ -38,6 +38,16 @@ class PostsController < ApplicationController
     end
   end
 
+  def unlike
+    @post = Post.find(params[:id])
+    if @post.unliked_by current_user
+      respond_to do |format|
+        format.html { redirect_to posts_url }
+        format.js
+      end
+    end
+  end
+
 
   private
 
