@@ -9,6 +9,8 @@
       <%= f.hidden_field :picture_cache %>
     </label>
     <br>
+      <%= f.text_field :location, placeholder: 'Where was it taken?',
+                        class: 'form-control' %>
       <%= f.text_area :caption, placeholder: 'Give your photo a caption...',
                       class: 'form-control' %>
       <%= f.submit 'Post', class: 'btn btn-primary' %>

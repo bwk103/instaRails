@@ -1,7 +1,10 @@
 <li id="post-<%=post.id%>">
   <div class="image-header">
     <%= link_to image_tag(post.user.profile, id: 'image-header-profile'), user_url(post.user) %>
-    <%= link_to post.user.username, user_url(post.user) %>
+    <div class="image-header-text">
+      <%= link_to post.user.username, user_url(post.user) %>
+      <p><%= post.location %></p>
+    </div>
   </div>
   <div class="content">
     <%= image_tag post.picture.url %>
