@@ -6,8 +6,5 @@
     <div class="recent_comment">
       <p><%= render 'comments/comments_list', post: post %></p>
     </div>
-      <% if logged_in? && comment_author?(post.comments.last.id) %>
-        <span id="delete"><%= link_to 'Delete', comment_path(post.comments.last), remote: true, method: 'delete' %></span>
-      <% end %>
     <% end %>
 </div>
