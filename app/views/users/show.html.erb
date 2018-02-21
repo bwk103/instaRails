@@ -19,7 +19,12 @@
          <strong>42</strong> followers&emsp;
          <strong>34</strong> following
       </p>
-      <p><strong id="user-name"><%= @user.name %></strong></p>
+      <p>
+        <strong id="user-name"><%= @user.name %></strong>
+        <% if @user.bio %>
+          <span> <%= @user.bio %></span>  
+        <% end %>
+      </p>
     </div>
   </div>
   <% if is_correct_user? %>
