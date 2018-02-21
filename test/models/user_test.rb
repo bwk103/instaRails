@@ -62,4 +62,20 @@ class UserTest < ActiveSupport::TestCase
     @user.save
     assert_not User.last.profile.nil?
   end
+
+  test 'users can have a bio' do
+    bio_text = 'This is just an example bio.'
+    @user.bio = bio_text
+    assert @user.valid?
+  end
+
+  test 'bio is limited to 150 characters' do
+    @user.bio = 'a' * 151
+    assert_not @user.valid?
+  end
+
+  test 'users can select not to have a bio' do
+    @user.bio = nil
+    assert @user.valid?
+  end
 end
