@@ -8,8 +8,10 @@
   </div>
   <div class="content">
     <%= image_tag post.picture.url %>
-    <%= render 'likes_form', post: post %>
-    <a id="user-com" href="#"><i class="far fa-comment"></i></a>
+    <% if logged_in? %>
+      <%= render 'likes_form', post: post %>
+      <a id="user-com" href="#"><i class="far fa-comment"></i></a>
+      <% end %>
     <% if logged_in? && is_author?(post.id) %>
     <%= link_to post_path(post.id), method: 'delete'  do %>
       <i class="far fa-trash-alt"></i>
