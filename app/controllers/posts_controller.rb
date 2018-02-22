@@ -3,7 +3,7 @@ class PostsController < ApplicationController
   before_action :correct_user, only: [:destroy]
 
   def index
-    @posts = Post.all
+    @posts = Post.all.paginate(page: params[:page], per_page: 10)
     @comment = Comment.new
     @users = User.all
   end

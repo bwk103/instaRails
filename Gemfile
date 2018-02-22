@@ -16,6 +16,7 @@ gem 'jquery-rails'
 gem 'bcrypt'
 #Use bcrypt for password storage
 gem 'acts_as_votable'
+gem 'will_paginate'
 gem 'sqlite3'
 # Use Puma as the app server
 gem 'puma', '~> 3.7'
