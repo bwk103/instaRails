@@ -21,4 +21,8 @@ class User < ApplicationRecord
     BCrypt::Password.create(password, cost: cost)
   end
 
+  def User.all_except(user)
+    where.not(id: user.id)
+  end
+
 end
