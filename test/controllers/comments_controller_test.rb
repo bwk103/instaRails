@@ -16,9 +16,9 @@ class CommentsControllerTest < ActionDispatch::IntegrationTest
 
   test "invalid comment should be redirected to posts" do
     log_in_as(@user)
-    post comments_path, params: { comment: { content: 'This is a comment',
+    post comments_path, params: { comment: { content: '',
                                              user_id: @user.id,
-                                             post_id: ''
+                                             post_id: @post.id
                                            }
     }
     assert_redirected_to posts_path
