@@ -1,0 +1,9 @@
+<% provide(:title, 'All Users') %>
+<div class="heading">
+  <p>All Users</p>
+</div>
+<div class="user-index-list">
+  <% @users.each do |user| %>
+    <%= render 'users/user_list_profile', user: user %>
+  <% end %>
+</div>

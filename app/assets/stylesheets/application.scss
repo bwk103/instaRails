@@ -452,3 +452,35 @@ input {
 #post-prev {
   display: none;
 }
+
+// User Directory
+
+.heading {
+  width: 50%;
+  display: flex;
+  margin: auto;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  color: rgb(153, 153, 153);
+  font-size: 14px;
+  font-weight: 600
+}
+
+.user-index-list {
+  border: 1px solid $section-border;
+  width: 50%;
+  margin: auto;
+  .mini_user {
+    padding: 5px;
+    background: white;
+    border-bottom: 1px solid #efefef;
+  }
+  .user-list-details {
+    margin-right: 10px;
+  }
+  a.btn {
+    align-self: center;
+    margin-left: auto;
+  }
+}

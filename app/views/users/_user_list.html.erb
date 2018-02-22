@@ -9,7 +9,7 @@
   <div class="user-list">
     <div class="user-list-content">
       <p>Users</p>
-      <%= link_to 'View All', '#' %>
+      <%= link_to 'View All', users_path %>
     </div>
     <% @users.each do |user| %>
       <%= render 'users/mini_user', user: user %>

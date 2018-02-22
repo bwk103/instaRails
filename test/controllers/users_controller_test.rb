@@ -77,4 +77,9 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
     assert assert_redirected_to root_url
     assert_not flash.empty?
   end
+
+  test 'users can access index' do
+    get users_path
+    assert_template 'users/index'
+  end
 end
