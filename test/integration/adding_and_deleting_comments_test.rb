@@ -12,16 +12,16 @@ class AddingAndDeletingCommentsTest < ActionDispatch::IntegrationTest
   test 'posting invalid comment' do
     assert_no_difference 'Comment.count' do
       post comments_path, params: {comment: { content: 'A test!',
-                                            user_id: @user_id,
-                                            post_id: @post_id
+                                            user_id: @user.id,
+                                            post_id: @post.id
                                             }}
     end
     assert_redirected_to login_url
     log_in_as(@user)
     assert_no_difference 'Comment.count' do
       post comments_path, params: {comment: { content: '',
-                                          user_id: @user_id,
-                                          post_id: @post_id
+                                          user_id: @user.id,
+                                          post_id: @post.id
                                           }}
       end
     assert_redirected_to posts_path
