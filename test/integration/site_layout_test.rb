@@ -38,4 +38,14 @@ class SiteLayoutTest < ActionDispatch::IntegrationTest
     assert_select 'a[href=?]', edit_user_path(@user2), count: 0
     assert_select 'a', text: 'Delete Account', count: 0
   end
+
+  test 'user directory layout' do
+    log_in_as(@user)
+    get user_path(@user)
+    assert_template 'users/show'
+    get users_path
+    assert_template 'users/index'
+    assert_match @user2.username, response.body
+    assert_no_match @user.username, response.body
+  end
 end

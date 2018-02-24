@@ -78,8 +78,14 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
     assert_not flash.empty?
   end
 
-  test 'users can access index' do
+  test 'users can access user directory' do
+    log_in_as(@user)
     get users_path
     assert_template 'users/index'
+  end
+
+  test 'users are redirected from user directory if not logged in' do
+    get users_path
+    assert_redirected_to login_url
   end
 end
