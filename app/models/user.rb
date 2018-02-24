@@ -4,6 +4,10 @@ class User < ApplicationRecord
 
   has_many :posts, dependent: :destroy
   has_many :comments, dependent: :destroy
+  has_many :active_relationships, class_name: 'Relationship',
+                                  foreign_key: 'follower_id',
+                                  dependent: :destroy
+
   validates :name, presence: true
   validates :username, presence: true, uniqueness: { case_sensitive: false }
   validates :bio, length: { maximum: 150 }
