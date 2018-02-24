@@ -10,7 +10,7 @@ User.create!(
   name: 'James Example',
   username: 'james123',
   email: 'james@test.com',
-  bio: 'Storyfinder, Citizen, Sock Hater, Perpetual Escapist, Unregulated Banker. A human. Being.'
+  bio: 'Storyfinder, Citizen, Sock Hater, Perpetual Escapist, Unregulated Banker. A human. Being.',
   password: 'password',
   password_confirmation: 'password',
   profile: File.open(Rails.root + "app/assets/images/seed_images/user3.jpg")
@@ -20,7 +20,7 @@ User.create!(
   name: 'Mia Example',
   username: 'maomao2012',
   email: 'mia@test.com',
-  bio: "Educator, Dancer, Oscar-loser, Information Addict, Ned Stark's Neck Stump. I am superb at parallel parking."
+  bio: "Educator, Dancer, Oscar-loser, Information Addict, Ned Stark's Neck Stump. I am superb at parallel parking.",
   password: 'password',
   password_confirmation: 'password',
   profile: File.open(Rails.root + "app/assets/images/seed_images/user1.jpg")
@@ -29,7 +29,7 @@ User.create!(
   name: 'Laura Example',
   username: 'lauraBear35',
   email: 'laura@test.com',
-  bio: "Filmmaker, Explorer, Political Activist, Dollar Store Owner, Cat Stroker. I don't believe in showers"
+  bio: "Filmmaker, Explorer, Political Activist, Dollar Store Owner, Cat Stroker. I don't believe in showers",
   password: 'password',
   password_confirmation: 'password',
   profile: File.open(Rails.root + "app/assets/images/seed_images/user2.jpg")
@@ -39,7 +39,7 @@ User.create!(
   name: 'Bruce Airplane',
   username: 'bonzaBruce',
   email: 'bruce@test.com',
-  bio: "Filmmaker, Explorer, Political Activist, Dollar Store Owner, Cat Stroker. I don't believe in showers"
+  bio: "Filmmaker, Explorer, Political Activist, Dollar Store Owner, Cat Stroker. I don't believe in showers",
   password: 'password',
   password_confirmation: 'password',
   profile: File.open(Rails.root + "app/assets/images/seed_images/user2.jpg")
@@ -74,3 +74,7 @@ Post.create!(
   caption: 'I feel the same way on a Monday morning',
   user: User.first
 )
+
+mia = User.find_by(name: 'Mia Example')
+james = User.find_by(name: 'James Example')
+mia.follow(james)
