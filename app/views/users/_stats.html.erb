@@ -1,0 +1,12 @@
+<div id="user-stats">
+  <p><strong><%= @user.posts.count %></strong> <%= 'post'.pluralize(@user.posts.count) %>&emsp;
+     <strong><%= @user.followers.count %></strong> <%= 'follower'.pluralize(@user.followers.count) %>&emsp;
+     <strong><%= @user.following.count %></strong> following
+  </p>
+  <p>
+    <strong id="user-name"><%= @user.name %></strong>
+    <% if @user.bio %>
+      <span> <%= @user.bio %></span>
+    <% end %>
+  </p>
+</div>

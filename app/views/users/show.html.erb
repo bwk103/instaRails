@@ -7,25 +7,16 @@
     <div class="name-and-buttons">
       <h3><%=@user.username %></h3>
       <% if is_correct_user? %>
-        <span>
-          <%= link_to edit_user_path(current_user), class:'btn btn-outline-dark' do %>
-            Edit Profile <i class="fas fa-cog"></i>
-          <% end %>
-        </span>
+        <%= render 'edit_profile_button' %>
+      <% else %>
+        <% if current_user.following?(@user) %>
+          <%= render 'unfollow_form', user: @user %>
+        <% else %>
+          <%= render 'follow_form', user: @user %>
+        <% end %>
       <% end %>
     </div>
-    <div id="user-stats">
-      <p><strong><%= @user.posts.count %></strong> <%= 'post'.pluralize(@user.posts.count) %>&emsp;
-         <strong>42</strong> followers&emsp;
-         <strong>34</strong> following
-      </p>
-      <p>
-        <strong id="user-name"><%= @user.name %></strong>
-        <% if @user.bio %>
-          <span> <%= @user.bio %></span>
-        <% end %>
-      </p>
-    </div>
+    <%= render 'users/stats', user: @user %>
   </div>
   <% if is_correct_user? %>
     <span>
