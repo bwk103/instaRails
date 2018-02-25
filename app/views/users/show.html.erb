@@ -16,7 +16,9 @@
         <% end %>
       <% end %>
     </div>
-    <%= render 'users/stats', user: @user %>
+    <div class="user-stats">
+      <%= render 'users/stats', user: @user %>      
+    </div>
   </div>
   <% if is_correct_user? %>
     <span>
