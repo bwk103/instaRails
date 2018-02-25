@@ -5,6 +5,7 @@ class RelationshipsControllerTest < ActionDispatch::IntegrationTest
   def setup
     @user = users(:james)
     @user2 = users(:mike)
+    @relationship = relationships(:first)
   end
 
   test 'create should redirect if not logged in' do
@@ -28,5 +29,12 @@ class RelationshipsControllerTest < ActionDispatch::IntegrationTest
                                                     followed_id: @user2.id}}
     end
     assert_redirected_to login_url
+  end
+
+  test 'unfollow user' do
+    log_in_as(@user)
+    assert_difference 'Relationship.count', -1 do
+      delete relationship_path(@relationship)
+    end
   end
 end
