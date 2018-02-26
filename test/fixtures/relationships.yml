@@ -1,3 +1,7 @@
 first:
   follower: james
   followed: mia
+
+second:
+  follower: mike
+  followed: james
