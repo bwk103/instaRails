@@ -3,7 +3,7 @@ class UsersController < ApplicationController
   before_action :correct_user, only: [:edit, :destroy]
 
   def index
-    @users = User.all_except(current_user).paginate(page: params[:page], per_page: 15)
+    @users = User.all_except(current_user).paginate(page: params[:page], per_page: 10)
   end
 
   def new

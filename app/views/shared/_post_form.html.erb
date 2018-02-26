@@ -1,6 +1,6 @@
 <div id="post-form">
     <%= form_for(@post, remote: true) do |f| %>
-    <label class="btn btn-primary">
+    <label class="btn btn-outline-secondary">
       Select your photo
       <span style="display:none;">
         <%= f.file_field :picture, id: 'post-preview',
@@ -13,7 +13,7 @@
                         class: 'form-control' %>
       <%= f.text_area :caption, placeholder: 'Give your photo a caption...',
                       class: 'form-control' %>
-      <%= f.submit 'Post', class: 'btn btn-primary' %>
+      <%= f.submit 'Post', class: 'btn-outline-secondary' %>
     <% end %>
 </div>
 <script type="text/javascript">

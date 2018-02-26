@@ -8,7 +8,7 @@
       <%= image_tag @user.profile if !@user.profile.nil? %>
 
       <div class="form-group">
-        <label class="btn btn-primary btn-file">
+        <label class="btn btn-outline-secondary btn-file">
            <%= yield(:button_text) + ' profile picture' %>
            <%= f.file_field :profile, id: 'profile-upload',
                             style: 'display:none;' %>
@@ -35,7 +35,7 @@
       <%= f.label :password_confirmation %>
       <%= f.password_field :password_confirmation, class: 'form-control' %>
 
-      <%= f.submit yield(:title), class: 'btn btn-primary' %>
+      <%= f.submit yield(:title), class: 'btn btn-outline-secondary' %>
 
       <% end %>
 
