@@ -53,5 +53,4 @@ class CommentsControllerTest < ActionDispatch::IntegrationTest
       delete comment_path(@comment)
     end
   end
-
 end
