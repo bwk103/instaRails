@@ -9,7 +9,7 @@
 
       <div class="form-group">
         <label class="btn btn-primary btn-file">
-           Add profile picture
+           <%= yield(:button_text) + ' profile picture' %>
            <%= f.file_field :profile, id: 'profile-upload',
                             style: 'display:none;' %>
         </label>

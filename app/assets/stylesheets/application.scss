@@ -470,6 +470,16 @@ input {
   width: 100%;
 }
 
+// Edit User Page
+
+.edit-user-form {
+  form {
+    img {
+      display: none;
+    }
+  }
+}
+
 // New Post
 
 #post-prev {
