@@ -17,7 +17,7 @@ class UsersController < ApplicationController
       flash[:success] = "Welcome to instaRails"
       redirect_to @user
     else
-      render 'new'
+      render "new"
     end
   end
 
@@ -35,7 +35,7 @@ class UsersController < ApplicationController
     if @user.save
       redirect_to @user
     else
-      render 'users/edit'
+      render "users/edit"
     end
   end
 
@@ -47,15 +47,13 @@ class UsersController < ApplicationController
 
   private
 
-  def user_params
-    params.require(:user).permit(:name, :username, :bio, :email, :profile, :password,
-                                 :password_confirmation)
-  end
+    def user_params
+      params.require(:user).permit(:name, :username, :bio, :email, :profile, :password,
+                                   :password_confirmation)
+    end
 
-  def correct_user
-    @user = User.find(params[:id])
-    redirect_to root_url unless @user == current_user
-  end
-
-
+    def correct_user
+      @user = User.find(params[:id])
+      redirect_to root_url unless @user == current_user
+    end
 end

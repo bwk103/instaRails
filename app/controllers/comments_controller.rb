@@ -11,7 +11,7 @@ class CommentsController < ApplicationController
         format.js
       end
     else
-      flash[:danger] = 'There was a problem submitting your comment'
+      flash[:danger] = "There was a problem submitting your comment"
       redirect_to posts_path
     end
   end
@@ -28,12 +28,12 @@ class CommentsController < ApplicationController
 
   private
 
-  def comment_params
-    params.require(:comment).permit(:content, :post_id)
-  end
+    def comment_params
+      params.require(:comment).permit(:content, :post_id)
+    end
 
-  def correct_user
-    comment = Comment.find(params[:id])
-    redirect_to posts_url unless comment.user == current_user
-  end
+    def correct_user
+      comment = Comment.find(params[:id])
+      redirect_to posts_url unless comment.user == current_user
+    end
 end

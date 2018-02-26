@@ -10,7 +10,7 @@ class SessionsController < ApplicationController
       redirect_to @user
     else
       flash.now[:danger] = "Invalid username / password"
-      render 'new'
+      render "new"
     end
   end
 
@@ -19,5 +19,4 @@ class SessionsController < ApplicationController
     flash[:success] = "You have been logged out"
     redirect_to root_url
   end
-
 end

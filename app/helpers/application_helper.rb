@@ -1,7 +1,6 @@
 module ApplicationHelper
-
-  def full_title(title = '')
-    base_title = 'instaRails'
+  def full_title(title = "")
+    base_title = "instaRails"
     if title.empty?
       return base_title
     else

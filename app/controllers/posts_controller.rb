@@ -20,7 +20,7 @@ class PostsController < ApplicationController
       redirect_to posts_path
     else
       flash.now[:danger] = "There was a problem with your post"
-      render 'new'
+      render "new"
     end
   end
 
@@ -50,16 +50,14 @@ class PostsController < ApplicationController
     end
   end
 
-
   private
 
-  def post_params
-    params.require(:post).permit(:picture, :location, :caption)
-  end
+    def post_params
+      params.require(:post).permit(:picture, :location, :caption)
+    end
 
-  def correct_user
-    @user = Post.find(params[:id]).user
-    redirect_to root_url unless @user == current_user
-  end
-
+    def correct_user
+      @user = Post.find(params[:id]).user
+      redirect_to root_url unless @user == current_user
+    end
 end

@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
 
   def logged_in_user
     unless logged_in?
-      flash[:danger] = 'You must be signed in to submit a post'
+      flash[:danger] = "You must be signed in to submit a post"
       redirect_to login_url
     end
   end
