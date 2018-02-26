@@ -1,7 +1,9 @@
 @import "bootstrap";
-@import url('https://fonts.googleapis.com/css?family=Pacifico');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans+Condensed:700|Pacifico');
 
 $section-border: rgba(202, 203, 202, 0.74);
+$title-color: #262626;
+$subheading-gray: rgb(153, 153, 153);
 $page-background-color: #f4f4f4;
 
 @mixin box-sizing {
@@ -30,19 +32,20 @@ body {
 
 .navbar {
   background-color: white !important;
-  border-top: 1px solid $section-border;
   border-bottom: 1px solid $section-border;
   .fa-camera-retro{
     font-size: 2em;
   }
   .navbar-brand {
+    color: $title-color;
     font-family: 'Pacifico', cursive;
     font-size: 2em;
-    letter-spacing: 2px;
+    letter-spacing: 1px;
     margin-left: 20px;
   }
 
   svg {
+    color: $title-color;
     font-size: 1.5em;
     margin-left: 20px;
   }
@@ -51,15 +54,12 @@ body {
  // Footer //
 
 footer {
-  margin-top: 45px;
-  padding-top: 5px;
+  margin-top: 20px;
+  padding-top: 10px;
   border-top: 1px solid $section-border;
 
   a {
-      color: gray;
-      &:hover {
-        color: gray;
-      }
+      color: $subheading-gray;
     }
     small {
       float: left;
@@ -75,10 +75,33 @@ footer {
   }
 
 //Static_pages - Home
-.jumbotron {
-  margin-top: 20px;
-  p {
-    margin-top: 20px;
+body.welcome-page {
+  background: url("man.jpg");
+  background-size: cover;
+  footer {
+    display: none;
+  }
+  .welcome {
+    padding-top: 50px;
+    height: 80vh;
+    h1 {
+      font-family: 'Pacifico', cursive;
+      font-size: 150px;
+    }
+    h4 {
+      font-family: 'Open Sans Condensed', sans-serif;
+      font-size: 40px;
+    }
+    a {
+      background: none;
+      margin-top: 20px;
+      margin-right: 15px;
+      align-self: center;
+      border-color: $title-color!important;
+      font-size: 14px;
+      font-weight: 600;
+      color: $title-color!important;
+    }
   }
 }
 
@@ -168,7 +191,7 @@ input {
     }
     .number-of-likes {
       margin-left: 10px;
-      color: #262626;
+      color: $title-color;
       font-size: 14px;
       font-weight: 600;
     }
@@ -269,7 +292,7 @@ input {
       font-size: 14px;
       font-weight: 600;
       text-decoration: none;
-      color: #262626!important;
+      color: $title-color!important;
       line-height: 18px;
     }
     p {
@@ -321,7 +344,7 @@ input {
       font-size: 14px;
       font-weight: 600;
       text-decoration: none;
-      color: #262626!important;
+      color: $title-color!important;
       line-height: 18px;
     }
     p {
@@ -485,10 +508,10 @@ input {
     border: none;
     font-size: 14px;
     font-weight: 600;
-    color: #262626!important;
+    color: $title-color!important;
   }
   a.btn:hover {
     background: none;
-    border: 1px solid #262626;
+    border: 1px solid $title-color;
   }
 }
