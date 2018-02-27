@@ -77,7 +77,7 @@ If, for some reason, you don't have the time to wait for 202 assertions to compl
 
 - [Rails](http://rubyonrails.org/) - Web framework
 
--[MiniTest](https://github.com/blowmage/minitest-rails) - Testing framework
+- [MiniTest](https://github.com/blowmage/minitest-rails) - Testing framework
 
 - [Bootstrap](http://getbootstrap.com/) - Front end component library
 
