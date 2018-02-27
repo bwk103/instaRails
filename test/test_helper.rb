@@ -1,3 +1,9 @@
+require 'coveralls'
+Coveralls.wear!('rails')
+require 'simplecov'
+SimpleCov.start 'rails' do
+  add_filter "/bin/"
+end
 require File.expand_path("../../config/environment", __FILE__)
 require "rails/test_help"
 require "minitest/reporters"
