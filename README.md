@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/bwk103/instaRails.svg?branch=master)](https://travis-ci.org/bwk103/instaRails)
+
 # InstaRails
 
 ![screen shot 2018-02-26 at 18 45 05](https://user-images.githubusercontent.com/8667021/36688740-3ed9bd14-1b25-11e8-87e2-be05b7cb637b.png)
