@@ -1,5 +1,5 @@
 source "https://rubygems.org"
-
+ 
 gem "acts_as_votable"
 gem "bcrypt"
 gem "bootstrap", "~> 4.0.0"
