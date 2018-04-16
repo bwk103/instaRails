@@ -26,3 +26,4 @@
 /app/assets/images/seed_images
 
 coverage
+*.DS_Store
